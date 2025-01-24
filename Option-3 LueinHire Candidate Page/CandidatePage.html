@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LueinHire Candidate Page</title>
+    <link rel="stylesheet" href="CandidatePage.css">
+    <script defer src="CandidatePage.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://lueinhirejo8edbq3wl.cdn.e2enetworks.net/website/favicon/la_favicon.png" alt="LueinHire Logo">
+            
+        </div>
+        
+        
+        <ul class="nav-links">
+           
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Employer</a></li>
+            <li><a href="#" class="active">Candidate</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#" class="login">Login</a></li>
+            
+        </ul>
+        <div class="hamburger">&#9776;</div>
+        <button id="darkModeToggle">🌙</button>
+    </nav>
+
+    <!-- Hero Section -->
+    
+    <section class="hero">
+        <div class="hero-img">
+            <img src="https://www.salesforce.com/ca/blog/wp-content/uploads/sites/12/2023/10/Aspects-of-a-First-Impression-Every-Salesperson-Needs-to-Know-opengraph.png" alt="Illustration">
+        </div>
+        <div class="hero-text">
+            <h2>Creates a tailored first impression</h2>
+            <p>Give companies a chance to see the real YOU that is simply not possible in a traditional resume.</p>
+            <ul>
+                <li>Creates a tailored first impression</li>
+                <li>Showcases your personality and soft skills</li>
+                <li>Proves your ability to sell</li>
+                <li>Ensures visibility</li>
+            </ul>
+            <button class="ctabtn">Sign Up</button>
+        </div>
+        
+    </section>
+
+    <!-- Sections -->
+    
+    <!-- Video Resume  -->
+    <section class="section alt">
+        <div class="section-img">
+            <img src="https://miro.medium.com/v2/resize:fit:1400/1*d_twuLbcE-CL776c_VMTyw.png" alt="Illustration">
+            
+        </div>
+        <div class="section-text">
+            
+            <h2>Why to create Video Resume</h2>
+            <p>Great way to showcase your soft skills.<button class="ctabtn"onclick="startMockInterview()">Get Started</button></p>
+            
+           
+            <video id="mockVideo" width="620" height="240" controls>
+                
+                <source src="https://www.youtube.com/watch?v=OjZbne9IOEY" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+           
+        </div>
+        
+    </section>
+
+    <!-- Generate Resume -->
+
+    <section class="genresume">
+        <div class="section-text">
+            <h2>Generate Your Resume</h2>
+            <p>It generates your resume with AI score.So fill the form & get your resume score....</p>
+            <div class="container">
+                <div class="form-section">
+                  <h2>Fill Your Details</h2>
+                  <form id="resume-form">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Your full name" required>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your email" required>
+                    
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="Your phone number" required>
+                    
+                    <label for="summary">Professional Summary</label>
+                    <textarea id="summary" placeholder="Brief summary about yourself"></textarea>
+                    
+                    <label for="skills">Skills</label>
+                    <input type="text" id="skills" placeholder="E.g., JavaScript, Python, Teamwork">
+                    
+                    <label for="experience">Experience</label>
+                    <textarea id="experience" placeholder="Your work experience"></textarea>
+                    
+                    <label for="education">Education</label>
+                    <textarea id="education" placeholder="Your educational background"></textarea>
+                    
+                    <button type="button" id="generate-btn" class="ctabtn">Generate Resume</button>
+                    <p id="errorMsg" class="error-message"></p>
+                  </form>
+                  <div class="resume-preview">
+                    <h1>Your Resume</h1>
+                    <div id="resume-output"></div>
+                  </div>
+                  <p id="resumeScore" style="color: green; font-weight: bold;"></p>
+              </div>
+                </div>
+    </section>
+
+    <!-- Learn Best Course -->
+    <section class="section">
+        <div class="section-img">
+            <img src="https://freelancinghacks.com/wp-content/uploads/2022/11/best-skills-to-learn-online-v4.jpg" alt="Illustration">
+        </div>
+        <div class="section-text">
+            <h2>Best Course</h2>
+            <p>Learn course & Boost your skills</p>
+            <button onclick="showCourses()" class="ctabtn">Browse Courses</button>
+            <div id="courseList"></div>
+            
+            
+            <div id="progressContainer" style="display: none;">
+                <p id="progressText">Progress: 0%</p>
+                <div id="progressBarContainer">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+
+    <!-- Coding Challenges -->
+    <section class="section">
+        <div class="section-text">
+            <h2>Code Practice</h2>
+            <p>Practice more code examples & enhance your coding skill</p>
+            <p>Write a JavaScript function to add two numbers and click "Run Code".</p>
+            <textarea id="codeInput" placeholder="Write your code here..."></textarea>
+            
+            <p id="codeOutput"></p>
+            <button onclick="runCode()" class="ctabtn">Run Code</button>
+            <div id="output-message"></div>
+        </div>
+        <div class="section-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbPNExCKlfEORiYlV5zIYTZmJQQj0WG6Y6cg&s" alt="Illustration">
+        </div>
+    </section>
+
+
+        <!-- Quiz Practice -->
+    <section class="section">
+        <div class="section-img">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuWKpYdss_3m3dcSlIAi6D1jRbNSZBiezqyZSckKsqSBPYhWIxqHxGZZGupwxqzzkBicKyR5VijpHZOJwleEH_x3Y0D6FHK2kHTcLHAWtIvqDUp8n0diHaxuD6WRXoZbd002hy0IG0XjVJkgd1VLkdM8dK5LWxvQgUHrqz_FJI-9mlH_DzxijfEzPovBMT/s740/Selection_2054.png" alt="Illustration">
+        </div>
+        <div class="section-text">
+            <h2>Quiz Practice</h2>
+            <p>Here,some practice questions.Try to solve this quiz & check your skills...</p>
+
+            <div class="quiz-container">
+                <h1>Quiz Time</h1>
+                <div id="quiz-box">
+                    <h2 id="question">Question goes here</h2>
+                    <div id="answer-buttons" class="btn-container"></div>
+                    <button id="next-btn">Next Question</button>
+                    
+                </div>
+                <div id="score-box" class="hidden">
+                    <h2 style="color: green;">Your Score: <span id="score">0</span> / <span id="total-questions"></span></h2>
+                    <button id="restart-btn">Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Find Skill-Based Job Oppturnities -->
+    <section class="section">
+        <div class="section-text">
+            <h2>Skill-Based Job Matching</h2>
+            <div class="job-search-container">
+                <h1>Find Jobs Based on Your Skills</h1>
+                <div class="search-box">
+                    <input type="text" id="skill-input" placeholder="Enter a skill (e.g., JavaScript)">
+                    <button id="search-btn" class="ctabtn">Search Jobs</button>
+                </div>
+                <div id="job-results" class="job-list"></div>
+            </div>
+        </div>
+        <div class="section-img">
+            <img src="https://www.fintechfutures.com/files/2020/09/Job-search.jpeg" alt="Illustration">
+        </div>
+    </section>
+
+    
+
+
+    
+     <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Logo & About -->
+        <div class="footer-section about">
+            <img src="https://lueinhirejo8edbq3wl.cdn.e2enetworks.net/website/favicon/la_favicon.png" alt="LueinHire Logo" class="footer-logo">
+            <h3>LueinHire</h3>
+            <p>Your All-in-One AI-Powered Hiring Automation Platform.
+                Smart ATS, Video Interviews, Behavioural Assessment, Live Interviews, and more.</p>
+            <div class="social-icons">
+                
+                <a href="https://www.linkedin.com/products/luein-analytics-lueinhirecom/" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrIbiofxGclX20CWBDtpmjOcbbuqEJS6PrSQ&s" alt="Linkdin"></a>
+                <a href="https://www.youtube.com/@LueinHire" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxZYY2AIAedQFVaPuihmQqipxOijVXLCIJtA&s" alt="Youtube"></a>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Employee Login</a></li>
+                <li><a href="#">Candidate Login</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Pricing</a></li>
+            </ul>
+        </div>
+
+        <!-- Policy Links -->
+        <div class="footer-section">
+            <h4>Policies</h4>
+            <ul>
+                <li><a href="#">Services Level Agreement</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Data Privacy Policy</a></li>
+                <li><a href="#">Refund Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section contact">
+            <h4>Get in Touch</h4>
+            <p>Address : #677, 27th Main, 13th Cross, HSR Layout, Bengaluru, KA, India - 560102</p>
+            <p>Contact : +91-8792463221
+                (Available hours IST 10am- 6pm)</p>
+            <p>Email : support@lueinhire.com</p>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 LueinHire. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
